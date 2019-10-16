@@ -22,5 +22,9 @@ Route::get('/usuarios/nuevo', 'UserController@create');
 Route::get('/usuarios/{id}', 'UserController@show')
 ->where('id', '[0-9]+');
 
-Route::get('/saludo/{nombre}/{apodo?}', 'WelcomeUserController');
+Route::get('/saludo/{nombre}', 'WelcomeUserController@saludoNombre');
+
+Route::get('/saludo/{nombre}/{apodo?}', 'WelcomeUserController@saludoApodo');
+
+
 
