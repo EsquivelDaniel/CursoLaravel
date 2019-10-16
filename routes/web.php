@@ -28,10 +28,13 @@ Route::get('/usuarios/{id}', function ($id) {
 })->where('id', '[0-9]+');
 
 Route::get('/saludo/{nombre}/{apodo?}', function ($nombre, $apodo = null) {
+    $nombre =ucfirst($nombre);
+    $apodo =ucfirst($apodo);
+
     if($apodo) {
         return "Bienvenido {$nombre}, tu apodo es {$apodo}";
     } else {
-        return "Bienvenido {$nombre}, no tienes apodo";
+        return "Bienvenido {$nombre}";
     }
     
 });
