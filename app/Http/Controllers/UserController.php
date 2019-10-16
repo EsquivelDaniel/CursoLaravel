@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index() {
-        $users = [
-            'Daniel',
-            'Juan',
-            'Pedro',
-            '<script>alert("Clicker")</script>'
-        ];
+
+        if(request()->has('empty')){
+            $users = [];
+        } else {
+
+            $users = [
+                'Daniel',
+                'Juan',
+                'Pedro'
+            ];
+    }
 
         $title = 'Listados de Usuarios';
 
