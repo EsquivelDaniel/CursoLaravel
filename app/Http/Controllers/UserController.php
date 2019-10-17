@@ -17,11 +17,11 @@ class UserController extends Controller
                 'Juan',
                 'Pedro'
             ];
-    }
+        }
 
         $title = 'Listados de Usuarios';
 
-        return view('users', compact('title', 'users'));
+        return view('user.index', compact('title', 'users'));
 
        /*  
        **Alternativa 1**
@@ -38,7 +38,8 @@ class UserController extends Controller
     }
 
     public function show($id) {
-        return "Mostrando detalles del usuario: {$id}";
+        $title = 'Listados de Usuarios';
+        return view('user.show', compact('title', 'id'));
     }
 
     public function create() {
